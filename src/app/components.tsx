@@ -1,51 +1,47 @@
-import { getImageUrl } from './utils.js';
-import { onsumit } from './hook.js';
-'use client'
-
-export function Avatar({ person, size }) {
-    return (
-      <img
-      className="avatar"
-      src={getImageUrl(person)}
-      alt={person.name}
-      width={size}
-      height={size}
-      />
-    );
-  }
+'use client';
+import { onSubmit, onSubmitPost } from './hook.js';
 
 export function Profile() {
-    return (
-        <Avatar
-        size={100}
-        person={{ 
-          name: 'Katsuko Saruhashi', 
-          imageId: 'YfeOqp2'
-        }}
-      />
-    );
-  }
-export function Tabla(){
-    return(
-      <table>
-        <th> Tabla ejemplo</th>
-        <tr> Es un columna</tr>
-      </table>
-    );
-  }
+  return (
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
 
-export function Boton(){
-  return(
-    <button type= 'button' onSubmit={onsumit}> Enviar info </button>   
-  )
-}  
+export function Tabla() {
+  return (
+    <table>
+      <th>Tabla de ejemplo</th>
+      <tr>Esta es una columna</tr>
+    </table>
+  );
+}
 
-export default function components(){
-    return(
-        <section>
-            <Profile />
-            <Tabla />
-            <Boton />
-        </section>
+export function Boton() {
+  return (
+    <button onClick={onSubmit} type="button" className="bg-[#03194f] p-3 rounded-xl hover:dark:border-neutral-700 hover:bg-gray-700">
+      BOTON
+    </button>
+  );
+}
+
+export function Boton2() {
+  return (
+    <button onClick={onSubmitPost} type="button" className="bg-[#03194f] p-3 rounded-xl hover:dark:border-neutral-700 hover:bg-gray-700">
+      BOTON POST
+    </button>
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <Profile />
+      <Tabla />
+      <Boton />
+      <Boton2 />
+    </section>
   );
 }

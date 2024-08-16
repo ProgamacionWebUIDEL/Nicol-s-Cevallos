@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Components from "./components";
-import Components2 from "./components2";
+import Gallery from "./components"; 
+import Profile from "./components2"; 
 
 export default function Home() {
   return (
@@ -10,8 +10,6 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
-          <components/>
-          <components2/>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
@@ -42,6 +40,9 @@ export default function Home() {
           priority
         />
       </div>
+
+      <Gallery />  
+      <Profile />  
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
